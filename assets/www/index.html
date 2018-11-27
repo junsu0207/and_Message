@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<title>TEST</title>
+<head>
+
+</head>
+<body>
+
+<h1>헬로우 하이브리드 !</h1>
+<p>테스트 화면</p>
+<button onclick="javascript:showToast('Hello World !!')">
+    Toast Test
+</button>
+<br>
+<input type="text" id="inputMsg" placeholder="message 입력" />
+<button onclick="sendMessage()">입력</button>
+<script>
+    function showToast(msg){
+        Hybrid.showToast(msg);
+    }
+    function sendMessage(){
+        var msg = document.getElementById('inputMsg').value;
+        Hybrid.sendMessage(msg);
+    }
+</script>
+
+</body>
+</html>
