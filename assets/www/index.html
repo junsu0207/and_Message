@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html>
-<title>TEST</title>
 <head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type='text/javascript' src='http://code.jquery.com/jquery-1.8.3.js'></script>
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet">
+    <script src="index.js"></script>
 </head>
 <body>
-
-<h1>헬로우 하이브리드 !</h1>
-<p>테스트 화면</p>
-<button onclick="javascript:showToast('Hello World !!')">
-    Toast Test
-</button>
-<br>
-<input type="text" id="inputMsg" placeholder="message 입력" />
-<button onclick="sendMessage()">입력</button>
+<div id="page" data-role="page" data-theme="b">
+    <div data-role="content">
+        <h2>Login</h2>
+        <p align="right">
+            <a href="registration.html" id="showregistration">Don't have an
+                account? &rarr;</a>
+        </p>
+        <form method="post" id="loginForm">
+            <label for="password">Email:</label>
+            <input class="required" type="text" name="username" id="username"
+                   placeholder="username@server.com">
+            <label for="password">Password:</label>
+            <input class="required" type="password" name="password"
+                   id="password" placeholder="password">
+            <input type="button"
+                   value="Login" id="submitButton" onClick="handleLogin()">
+        </form>
+    </div>
+</div>
 <script>
-    function showToast(msg){
-        Hybrid.showToast(msg);
-    }
-    function sendMessage(){
-        var msg = document.getElementById('inputMsg').value;
-        Hybrid.sendMessage(msg);
-    }
+    app.init();
 </script>
-
 </body>
 </html>
